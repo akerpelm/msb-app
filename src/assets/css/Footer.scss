@@ -1,0 +1,28 @@
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--charcoal-500);
+  width: var(--full-width);
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--secondary-500);
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  transition: var(--transition);
+  &:hover {
+    background: var(--primary-500);
+    color: var(--secondary-500);
+    border-radius: 10px;
+  }
+}

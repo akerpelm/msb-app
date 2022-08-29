@@ -1,5 +1,5 @@
-import { Link } from '.';
-import '../assets/css/Footer.css';
+import '../assets/css/Footer.scss';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const leftFooterLinks = ['Solutions', 'About Us', 'Documentation', 'Blog'];
@@ -11,14 +11,22 @@ const Footer = () => {
       <div className="footer-col-1">
         <ul>
           {leftFooterLinks.map((label, i) => {
-            return <Link label={label} key={i} />;
+            return (
+              <Link to="/" key={i} className="footer-link">
+                {label}
+              </Link>
+            );
           })}
         </ul>
       </div>
       <div className="footer-col-2">
         <ul>
           {rightFooterLinks.map((label, i) => {
-            return <Link label={label} key={i} />;
+            return (
+              <Link to="/" key={i} className="footer-link">
+                {label}
+              </Link>
+            );
           })}
         </ul>
       </div>

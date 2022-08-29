@@ -1,4 +1,4 @@
-// import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import { Landing, Error, Register, ProtectedRoute } from './pages';
 // import {
 //   CreateJob,
@@ -8,30 +8,30 @@
 //   Stats
 // } from './pages/Dashboard';
 
-import { Landing, Solutions } from './pages';
+import {
+  Landing,
+  Solutions,
+  SharedLayout,
+  About,
+  Documentation,
+  Contact,
+  Register
+} from './pages';
 
 function App() {
   return (
-    <div>
-      <Landing />
-      <Solutions />
-    </div>
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route
-    //       path="/"
-    //       element={<ProtectedRoute>{/* <SharedLayout /> */}</ProtectedRoute>}
-    //     >
-    //       {/* <Route index element={<Stats />} />
-    //       <Route path="add-job" element={<CreateJob />} />
-    //       <Route path="jobs" element={<ListJobs />} />
-    //       <Route path="profile" element={<Profile />} /> */}
-    //     </Route>
-    //     {/* <Route path="/register" element={<Register />} /> */}
-    //     <Route path="/landing" element={<Landing />} />
-    //     {/* <Route path="*" element={<Error />} /> */}
-    //   </Routes>
-    // </BrowserRouter>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Landing />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/docs" element={<Documentation />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/register" element={<Register />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

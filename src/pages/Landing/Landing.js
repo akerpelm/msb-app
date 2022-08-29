@@ -1,16 +1,13 @@
-import landing1 from '../assets/images/landing1.svg';
-import '../assets/css/LandingPage.css';
+import landing1 from '../../assets/images/landing1.svg';
+import '../../assets/css/LandingPage.scss';
 // import Wrapper from '../assets/wrappers/LandingPage';
-import { Footer, Logo, Navbar } from '../components';
+import { Footer, Logo, Navbar } from '../../components';
 // import { Link } from 'react-router-dom';
 
 const Landing = () => {
   return (
     // <Wrapper>
     <div>
-      <nav>
-        <Navbar />
-      </nav>
       <div className="container page">
         <div className="info">
           <h1>
@@ -70,11 +67,6 @@ const Landing = () => {
           </Link> */}
         </div>
       </div>
-      <div className="carousel">
-        test
-        {/* <div className="info">info</div> */}
-      </div>
-      <Footer />
     </div>
   );
 };
