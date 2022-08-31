@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import {
   Landing,
-  Solutions,
+  Features,
   SharedLayout,
   About,
   Documentation,
@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Landing />} />
-          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/features" element={<Features />} />
           <Route path="/about" element={<About />} />
           <Route path="/docs" element={<Documentation />} />
           <Route path="/contact" element={<Contact />} />

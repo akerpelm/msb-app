@@ -1,46 +1,18 @@
-// import React, { useReducer, useContext } from 'react';
+import React, { useReducer, useContext } from 'react';
 // import axios from 'axios';
-// // import reducer from './reducers';
-// // import {
-// //   DISPLAY_ALERT,
-// //   CLEAR_ALERT,
-// //   AUTHENTICATE_USER_INITIATE,
-// //   AUTHENTICATE_USER_SUCCESS,
-// //   AUTHENTICATE_USER_ERROR,
-// //   TOGGLE_SIDEBAR,
-// //   LOGOUT_USER,
-// //   UPDATE_USER_INITIATE,
-// //   UPDATE_USER_SUCCESS,
-// //   UPDATE_USER_ERROR,
-// //   HANDLE_CHANGE,
-// //   CLEAR_VALUES,
-// //   CREATE_JOB_INITIATE,
-// //   CREATE_JOB_SUCCESS,
-// //   CREATE_JOB_ERROR,
-// //   GET_JOBS_SUCCESS,
-// //   GET_JOBS_INITIATE,
-// //   SET_EDIT_JOB,
-// //   DELETE_JOB_INITIATE,
-// //   EDIT_JOB_INITIATE,
-// //   EDIT_JOB_SUCCESS,
-// //   EDIT_JOB_ERROR,
-// //   GET_JOB_STATS_INITIATE,
-// //   GET_JOB_STATS_SUCCESS,
-// //   CLEAR_FILTERS,
-// //   CHANGE_PAGE
-// // } from './actions';
-// // import {
-// //   jobTypeOptions,
-// //   jobStatusOptions,
-// //   sortOptions
-// // } from './contextConstants';
+import reducer from './reducers';
+import { DISPLAY_ALERT, CLEAR_ALERT } from './actions';
 
 // // const token = localStorage.getItem('token');
 // // const user = localStorage.getItem('user');
 // // const userLocation = localStorage.getItem('location');
 
-// const initialState = {
-//   // isLoading: false,
+const initialState = {
+  isLoading: false,
+  showAlert: false,
+  alertText: '',
+  alertType: ''
+};
 //   // showAlert: false,
 //   // alertText: '',
 //   // alertType: '',
@@ -68,18 +40,31 @@
 //   // searchJobType: 'all',
 //   // sort: 'newest',
 //   // sortOptions
-// };
 
-// const AppContext = React.createContext();
+const AppContext = React.createContext();
 
-// const AppProvider = ({ children }) => {
-//   // const [state, dispatch] = useReducer(reducer, initialState);
+const AppProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-//   return <AppContext.Provider value={true}>{children}</AppContext.Provider>;
-// };
+  const displayAlert = () => {
+    dispatch({ type: DISPLAY_ALERT });
+    // clearAlert();
+  };
+  const clearAlert = () => {
+    // setTimeout(() => {
+    dispatch({ type: CLEAR_ALERT });
+    // }, 5000);
+  };
 
-// // const useAppContext = () => {
-// //   return useContext(AppContext);
-// // };
+  return (
+    <AppContext.Provider value={{ ...state, displayAlert, clearAlert }}>
+      {children}
+    </AppContext.Provider>
+  );
+};
 
-// // export { AppProvider, initialState, useAppContext };
+const useAppContext = () => {
+  return useContext(AppContext);
+};
+
+export { AppProvider, initialState, useAppContext };

@@ -1,25 +1,23 @@
-const FormRow = ({
-  type,
+const FormRowTextArea = ({
   name,
-  value,
-  handleChange,
   labelText,
-  placeholder = ''
+  handleChange,
+  placeholder,
+  value
 }) => {
   return (
     <div className="form-row">
       <label htmlFor={name} className="form-label">
         {labelText || name}
       </label>
-      <input
-        type={type}
+      <textarea
         value={value}
         name={name}
         onChange={handleChange}
-        className="form-input"
+        className="form-textarea"
         placeholder={placeholder}
-      />
+      ></textarea>
     </div>
   );
 };
-export default FormRow;
+export default FormRowTextArea;

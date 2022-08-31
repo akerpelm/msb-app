@@ -13,8 +13,8 @@ const Navbar = () => {
     //   display: <Logo />
     // },
     {
-      ref: '/solutions',
-      display: 'Solutions'
+      ref: '/features',
+      display: 'Features'
     },
     {
       ref: '/about',
@@ -37,8 +37,8 @@ const Navbar = () => {
   return (
     <nav>
       <div className="nav-center">
-        <Link to="/">
-          <Logo />
+        <Link to="/" className="btn">
+          Home
         </Link>
         <div className="link-container">
           {links.map(({ ref, display }, i) => {
@@ -48,6 +48,7 @@ const Navbar = () => {
                 to={ref}
                 key={i}
                 onClick={() => setIsActive(i)}
+                onBlur={() => setIsActive(null)}
               >
                 {display}
               </Link>

@@ -3,6 +3,12 @@
   display: grid;
   align-items: flex-start;
 }
+
+.btn-container {
+  .btn {
+    margin: 0px 10px;
+  }
+}
 h1 {
   font-weight: 700;
   span {

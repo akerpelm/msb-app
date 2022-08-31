@@ -2,17 +2,29 @@ import '../assets/css/Footer.scss';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const leftFooterLinks = ['Solutions', 'About Us', 'Documentation', 'Blog'];
+  const leftFooterLinks = [
+    { label: 'Features', link: '/features' },
+    { label: 'About Us', link: '/about' },
+    { label: 'Documentation', link: '/docs' }
+    // 'Blog'
+  ];
 
-  const rightFooterLinks = ['LinkedIn', 'Twitter', 'Contact Us'];
+  const rightFooterLinks = [
+    //   'LinkedIn',
+    // 'Twitter',
+    { label: 'Sign Up Today', link: '/register' },
+    { label: 'Contact Us', link: '/contact' }
+    // 'Contact Us'
+  ];
 
   return (
     <div className="footer">
       <div className="footer-col-1">
         <ul>
-          {leftFooterLinks.map((label, i) => {
+          {leftFooterLinks.map(({ label, link }, i) => {
+            console.log(label, link);
             return (
-              <Link to="/" key={i} className="footer-link">
+              <Link to={link} key={i} className="footer-link">
                 {label}
               </Link>
             );
@@ -21,9 +33,9 @@ const Footer = () => {
       </div>
       <div className="footer-col-2">
         <ul>
-          {rightFooterLinks.map((label, i) => {
+          {rightFooterLinks.map(({ label, link }, i) => {
             return (
-              <Link to="/" key={i} className="footer-link">
+              <Link to={link} key={i} className="footer-link">
                 {label}
               </Link>
             );

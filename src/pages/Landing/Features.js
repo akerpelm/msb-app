@@ -1,33 +1,47 @@
-import '../../assets/css/Solutions.scss';
+import '../../assets/css/Features.scss';
 import Table from 'react-bootstrap/Table';
-
-const Solutions = () => {
+import Card from 'react-bootstrap/Card';
+const Features = () => {
   return (
-    <div className="solutions">
+    <div className="features">
       <h1 className="title">
         Solutions that reinforce your success in the classroom
       </h1>
       <div className="container page">
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis ducimus
-          esse dolore id quam repellendus animi voluptatem ab. Odio dolore
-          incidunt est quos quisquam impedit placeat nisi modi sit aut.
-        </p>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis ducimus
-          esse dolore id quam repellendus animi voluptatem ab. Odio dolore
-          incidunt est quos quisquam impedit placeat nisi modi sit aut.
-        </p>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis ducimus
-          esse dolore id quam repellendus animi voluptatem ab. Odio dolore
-          incidunt est quos quisquam impedit placeat nisi modi sit aut.
-        </p>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis ducimus
-          esse dolore id quam repellendus animi voluptatem ab. Odio dolore
-          incidunt est quos quisquam impedit placeat nisi modi sit aut.
-        </p>
+        <div className="section">
+          <Card text="red">
+            <h3>Question Creation</h3>
+            <p>Creating questions has never been easier.</p>
+            Hello
+          </Card>
+        </div>
+        <div className="section">
+          <Card text="red">
+            <h3>Question Creation</h3>
+            <p>Creating questions has never been easier.</p>
+            Hello
+          </Card>
+        </div>
+        <div className="section">
+          <h3>Question Creation</h3>
+          <p>Creating questions has never been easier.</p>
+        </div>
+        <div className="section">
+          <h3>Question Creation</h3>
+          <p>Creating questions has never been easier.</p>
+        </div>
+        <div className="section">
+          <h3>Question Creation</h3>
+          <p>Creating questions has never been easier.</p>
+        </div>
+        <div className="section">
+          <h3>Question Creation</h3>
+          <p>Creating questions has never been easier.</p>
+        </div>
+        <div className="section">
+          <h3>Question Creation</h3>
+          <p>Creating questions has never been easier.</p>
+        </div>
       </div>
 
       <h1 className="title">Pricing</h1>
@@ -87,4 +101,4 @@ const Solutions = () => {
     </div>
   );
 };
-export default Solutions;
+export default Features;
