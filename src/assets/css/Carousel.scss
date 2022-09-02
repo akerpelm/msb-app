@@ -1,0 +1,13 @@
+.carousel {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out all;
+  padding: 100px;
+  background-color: var(--charcoal-500);
+  margin-bottom: 20px;
+  p {
+    max-width: 100%;
+  }
+}

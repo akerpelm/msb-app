@@ -6,6 +6,10 @@ import FormRowDropdown from './FormRowDropdown';
 import Loading from './Loading';
 import FormRowTextArea from './FormRowTextArea';
 import Alert from './Alert';
+import FeatureCard from './FeatureCard';
+import Testimonials from './Testimonials';
+import AccordionUnit from './AccordionUnit';
+import ControlledCarousel from './ControlledCarousel';
 export {
   Logo,
   Navbar,
@@ -14,5 +18,9 @@ export {
   Loading,
   FormRowDropdown,
   FormRowTextArea,
-  Alert
+  Alert,
+  FeatureCard,
+  Testimonials,
+  AccordionUnit,
+  ControlledCarousel
 };

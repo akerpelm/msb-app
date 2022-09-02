@@ -1,13 +1,10 @@
 import landing1 from '../../assets/images/landing1.svg';
 import '../../assets/css/LandingPage.scss';
-// import Wrapper from '../assets/wrappers/LandingPage';
-import { Footer, Loading, Logo, Navbar } from '../../components';
-import { useAppContext } from '../../context/appContext';
+import { ControlledCarousel } from '../../components';
 import { Link } from 'react-router-dom';
+import { landingCarouselData } from '../../util/constants';
 
 const Landing = () => {
-  const { isLoading } = useAppContext;
-
   return (
     <div>
       <h2>Don't let outdated technology limit learning potential.</h2>
@@ -43,31 +40,7 @@ const Landing = () => {
         </div>
         <img src={landing1} alt="landing-img-1" className="img main-img" />
       </div>
-      {/* <div className="container page">
-        <img src={landing1} alt="landing-img-1" className="img main-img" />
-        <div className="info">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
-            sapiente est veniam facilis harum et optio, tempore accusamus
-            aspernatur ab, ipsum sed quisquam laboriosam dolorum neque officiis
-            iste commodi quam!
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-            nesciunt reiciendis numquam cupiditate, illum unde deleniti eaque,
-            quia, dolor repellendus ipsa architecto reprehenderit eos incidunt a
-            voluptate id laborum minima.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. At ullam
-            alias et quia laboriosam, illum animi omnis fugiat ex quae officia.
-            Tenetur recusandae debitis sapiente reprehenderit et aperiam maxime
-            minus?
-          </p>
-          
-        </div>
-      </div> */}
+      <ControlledCarousel data={landingCarouselData} />
     </div>
   );
 };

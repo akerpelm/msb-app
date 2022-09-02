@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ScrollToTop from './util/ScrollToTop';
 // import { Landing, Error, Register, ProtectedRoute } from './pages';
 // import {
 //   CreateJob,
@@ -21,6 +22,7 @@ import {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Landing />} />

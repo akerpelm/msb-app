@@ -1,59 +1,112 @@
-import { FormRow, FormRowDropdown } from '../../components';
+import { FormRow, FormRowDropdown, Alert } from '../../components';
 import '../../assets/css/Register.scss';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { useAppContext } from '../../context/appContext';
+
+const initialState = {
+  role: '',
+  name: '',
+  email: '',
+  password: '',
+  currentMember: true
+};
 
 const Register = () => {
+  const { isLoading, displayAlert, showAlert, clearAlert } = useAppContext();
+  const [values, setValues] = useState(initialState);
+  const navigate = useNavigate;
+
+  const toggleMemberStatus = () => {
+    setValues({ ...values, currentMember: !values.currentMember });
+  };
+
+  const handleChange = (e) => {
+    setValues({ ...values, [e.target.name]: e.target.value });
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const { role, name, email, password, currentMember } = values;
+    if (!email || !password || (!name && !currentMember)) {
+      displayAlert();
+      return;
+    }
+    const currentUser = { name, email, password };
+    // if (currentMember) {
+    //   authenticateUser({
+    //     currentUser,
+    //     authMethod: 'login',
+    //     alertText: 'Login successful. Redirecting...'
+    //   });
+    // } else {
+    //   authenticateUser({
+    //     currentUser,
+    //     authMethod: 'register',
+    //     alertText: 'Registration complete. Redirecting...'
+    //   });
+    // }
+  };
+
+  const handleClear = () => {
+    const { role, name, email, password, currentMember } = values;
+    if (
+      (email && password && role && name) ||
+      (currentMember && email && password)
+    ) {
+      clearAlert();
+      return;
+    }
+  };
   return (
     <div className="register full-page ">
-      <form className="form">
-        <h3>Sign Up</h3>
-        <FormRowDropdown
-          labelText="Title"
-          name="searchJobStatus"
-          value="Instructor"
-          handleChange={() => {}}
-          options={['Educator', 'Student']}
-        />
+      <form className="form" onSubmit={onSubmit} onChange={handleClear}>
+        <h3>{values.currentMember ? 'Sign Up' : 'Sign In'}</h3>
+        {showAlert && <Alert />}
+        {values.currentMember && (
+          <FormRowDropdown
+            labelText="role"
+            name="role"
+            value={values.role}
+            handleChange={handleChange}
+            options={['Educator', 'Student']}
+          />
+        )}
+        {values.currentMember && (
+          <FormRow
+            type="text"
+            name="name"
+            value={values.name}
+            handleChange={handleChange}
+            labelText=""
+          />
+        )}
         <FormRow
           type="text"
-          name="name"
-          value="Name" //values.name
-          handleChange={() => {}}
-          labelText=""
-        />
-        <FormRow
-          type="text"
-          name="email"
-          value="email" //values.email
-          handleChange={() => {}}
+          name={'email'}
+          value={values.email}
+          handleChange={handleChange}
           labelText=""
         />
         <FormRow
           type="password"
           name="password"
-          value="password" //values.email
-          handleChange={() => {}}
+          value={values.password}
+          handleChange={handleChange}
           labelText=""
         />
 
-        <button
-          type="submit"
-          className="btn btn-block"
-          // disabled={isLoading}
-        >
+        <button type="submit" className="btn btn-block" disabled={isLoading}>
           Submit
         </button>
-
-        {/* {values.isMember && ( */}
         <p>
-          {/* {values.isMember ?  */}
-          Not a member yet?
-          {/* // : 'Already a member?'} */}
+          {values.currentMember ? 'Not a member yet?' : 'Already a member?'}
           <button
             type="button"
-            // onClick={toggleMember}
+            onClick={toggleMemberStatus}
             className="member-btn"
           >
-            {/* {values.isMember ? 'Register' : 'Login'} */}
+            {values.currentMember ? 'Register' : 'Login'}
           </button>
         </p>
       </form>

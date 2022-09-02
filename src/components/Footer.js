@@ -22,7 +22,6 @@ const Footer = () => {
       <div className="footer-col-1">
         <ul>
           {leftFooterLinks.map(({ label, link }, i) => {
-            console.log(label, link);
             return (
               <Link to={link} key={i} className="footer-link">
                 {label}

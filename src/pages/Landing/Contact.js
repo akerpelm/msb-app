@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import {
   FormRow,
@@ -8,9 +7,10 @@ import {
   Alert
 } from '../../components';
 import { useAppContext } from '../../context/appContext';
+import '../../assets/css/Contact.scss';
 
 const Contact = () => {
-  const { displayAlert, showAlert, clearAlert } = useAppContext();
+  const { displayAlert, showAlert, clearAlert, isLoading } = useAppContext();
 
   const initialState = {
     contactFirstName: '',
@@ -46,8 +46,29 @@ const Contact = () => {
       displayAlert();
       return;
     }
-
     setFormSubmission(true);
+
+    //do something to app context
+  };
+
+  const handleClear = () => {
+    const {
+      contactFirstName,
+      contactLastName,
+      contactEmail,
+      contactCategory,
+      contactText
+    } = values;
+    if (
+      contactFirstName &&
+      contactLastName &&
+      contactEmail &&
+      contactCategory &&
+      contactText
+    ) {
+      clearAlert();
+      return;
+    }
   };
 
   const formFields = [];
@@ -55,7 +76,7 @@ const Contact = () => {
     !isFormSubmitted &&
       formFields.push(
         <div className="full-page">
-          <form onSubmit={onSubmit} className="form" onChange={clearAlert}>
+          <form onSubmit={onSubmit} className="form" onChange={handleClear}>
             <h3>Contact Us</h3>
             {showAlert && <Alert />}
             <FormRow
@@ -63,7 +84,7 @@ const Contact = () => {
               name="contactFirstName"
               value={values.contactFirstName}
               handleChange={handleChange}
-              labelText="first name*"
+              labelText="first name"
             />
 
             <FormRow
@@ -71,14 +92,14 @@ const Contact = () => {
               name="contactLastName"
               value={values.contactLastName} //values.name
               handleChange={handleChange}
-              labelText="last name*:"
+              labelText="last name"
             />
             <FormRow
               type="text"
               name="contactEmail"
               value={values.contactEmail} //values.name
               handleChange={handleChange}
-              labelText="email address:"
+              labelText="email address"
             />
             <FormRowDropdown
               name="contactCategory"
@@ -101,13 +122,12 @@ const Contact = () => {
             />
             {showAlert && <Alert />}
 
-            <input type="submit" className="btn" />
+            <input type="submit" className="btn" disabled={isLoading} />
           </form>
         </div>
       );
     isFormSubmitted &&
       formFields.push(
-        // <div className="full-page">
         <form className="form">
           <p>Form submitted. Please give us 1-3 business days to respond.</p>
           <p>- The MSB Team</p>
@@ -115,7 +135,6 @@ const Contact = () => {
             Return Home
           </Link>
         </form>
-        // </div>
       );
   };
 
@@ -127,23 +146,3 @@ const Contact = () => {
   return generateFormFields();
 };
 export default Contact;
-
-// import React from 'react';
-// import { useForm } from 'react-hook-form';
-
-// export default function Contact() {
-//   const { register, handleSubmit } = useForm();
-//   const onSubmit = (data) => console.log(data);
-
-//   return (
-//     <form onSubmit={handleSubmit(onSubmit)}>
-//       <input {...register('firstName')} />
-//       <select {...register('gender')}>
-//         <option value="female">female</option>
-//         <option value="male">male</option>
-//         <option value="other">other</option>
-//       </select>
-//       <input type="submit" />
-//     </form>
-//   );
-// }
