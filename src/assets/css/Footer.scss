@@ -20,9 +20,10 @@ ul {
   padding: 1rem 2rem;
   text-transform: capitalize;
   transition: var(--transition);
+  margin: 10px 0;
   &:hover {
     background: var(--primary-500);
     color: var(--secondary-500);
-    border-radius: 10px;
+    border-radius: var(--borderRadius);
   }
 }

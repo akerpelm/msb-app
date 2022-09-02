@@ -7,7 +7,6 @@ import Loading from './Loading';
 import FormRowTextArea from './FormRowTextArea';
 import Alert from './Alert';
 import FeatureCard from './FeatureCard';
-import Testimonials from './Testimonials';
 import AccordionUnit from './AccordionUnit';
 import ControlledCarousel from './ControlledCarousel';
 export {
@@ -20,7 +19,6 @@ export {
   FormRowTextArea,
   Alert,
   FeatureCard,
-  Testimonials,
   AccordionUnit,
   ControlledCarousel
 };

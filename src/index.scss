@@ -26,7 +26,7 @@ html {
 
   //grey
   --charcoal-500: #222222;
-  // --charcoal-50: #f0f4f8
+  --charcoal-500: #334e68;
 
   // other
   // --secondary-500: #adefd1ff;
@@ -237,7 +237,7 @@ ul {
   padding: 0.375rem 0.75rem;
   border-radius: var(--borderRadius);
   background: var(--backgroundColor);
-  border: 1px solid var(--grey-200);
+  border: 1px solid var(--charcoal-500);
 }
 .form-input,
 .form-select,
@@ -253,7 +253,7 @@ ul {
 }
 ::placeholder {
   font-family: inherit;
-  color: var(--grey-400);
+  color: var(--charcoal-500);
 }
 .form-alert {
   color: var(--red-dark);

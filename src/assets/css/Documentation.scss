@@ -1,0 +1,14 @@
+.documentation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .column1 {
+    display: flex;
+    flex-basis: 300px;
+  }
+
+  li {
+    min-width: 300px;
+  }
+}
