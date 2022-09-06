@@ -1,19 +1,21 @@
 import '../assets/css/Footer.scss';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
+import { navBarHeight } from '../util/constants';
 
 const Footer = () => {
   const leftFooterLinks = [
-    { label: 'Features', link: '/features' },
-    { label: 'About Us', link: '/about' },
-    { label: 'Documentation', link: '/docs' }
+    { label: 'Back To Top', link: 'overview' },
+    { label: 'Features', link: 'features' },
+    { label: 'About Us', link: 'about' }
     // 'Blog'
   ];
 
   const rightFooterLinks = [
     //   'LinkedIn',
     // 'Twitter',
-    { label: 'Sign Up Today', link: '/register' },
-    { label: 'Contact Us', link: '/contact' }
+    { label: 'Documentation', link: 'docs' },
+    { label: 'Sign Up Today', link: 'register' },
+    { label: 'Contact Us', link: 'contact' }
     // 'Contact Us'
   ];
 
@@ -23,7 +25,12 @@ const Footer = () => {
         <ul>
           {leftFooterLinks.map(({ label, link }, i) => {
             return (
-              <Link to={link} key={i} className="footer-link">
+              <Link
+                to={link}
+                key={i}
+                className="footer-link"
+                offset={navBarHeight}
+              >
                 {label}
               </Link>
             );
@@ -34,7 +41,12 @@ const Footer = () => {
         <ul>
           {rightFooterLinks.map(({ label, link }, i) => {
             return (
-              <Link to={link} key={i} className="footer-link">
+              <Link
+                to={link}
+                key={i}
+                className="footer-link"
+                offset={navBarHeight}
+              >
                 {label}
               </Link>
             );

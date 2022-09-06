@@ -5,6 +5,7 @@ import About from './Landing/About';
 import Documentation from './Landing/Documentation';
 import Contact from './Landing/Contact';
 import Register from './Landing/Register';
+import Overview from './Landing/Overview';
 export {
   Landing,
   Features,
@@ -12,5 +13,6 @@ export {
   About,
   Documentation,
   Contact,
-  Register
+  Register,
+  Overview
 };

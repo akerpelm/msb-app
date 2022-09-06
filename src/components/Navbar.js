@@ -1,48 +1,28 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import * as RS from 'react-scroll';
-// import { useAppContext } from '../context/appContext';
+import { Link as RSLink } from 'react-scroll';
 import '../assets/css/Navbar.scss';
-import { navLinks } from '../util/constants';
-import {
-  FaAlignLeft,
-  FaUserCircle,
-  FaCaretDown,
-  FaFeather,
-  FaHome
-} from 'react-icons/fa';
-const Navbar = () => {
-  const [isActive, setIsActive] = useState(true);
+import { navBarHeight, navLinks } from '../util/constants';
 
+const Navbar = () => {
   return (
     <nav>
       <div className="nav-center">
-        <Link
-          to="/"
-          className={isActive === true ? 'btn active' : 'btn'}
-          onClick={() => setIsActive(true)}
-        >
-          <FaHome />
-          Home
-        </Link>
         <div className="link-container">
-          {navLinks.map(({ ref, display, icon = <FaHome /> }, i) => {
+          {navLinks.map(({ ref, display, icon, link = false }, i) => {
             return (
-              <RS.Link
-                className={isActive === i ? 'btn active' : 'btn'}
+              <RSLink
+                className="btn"
                 to={ref}
                 key={i}
-                onClick={() => setIsActive(i)}
+                offset={navBarHeight}
+                spy
+                smooth
               >
                 {display}
-                {/* {icon} */}
-              </RS.Link>
+                {icon}
+              </RSLink>
             );
           })}
         </div>
-        {/* <div className="test">
-          <Link to="/register" />
-        </div> */}
       </div>
     </nav>
   );

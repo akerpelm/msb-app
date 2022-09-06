@@ -4,13 +4,33 @@
   align-items: flex-start;
 }
 
+section {
+  background-color: var(--white);
+  margin: 50px 0;
+  padding: 20px 0;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  // scroll-behavior: smooth;
+  // border-bottom: 10px solid var(--grey-400);
+  box-shadow: var(--shadow-2);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    scroll-snap-align: start;
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
 .btn-container {
   .btn {
     margin: 0px 10px;
   }
 }
 
-.landing-title {
+.overview-title {
   h1 {
     font-weight: 700;
     text-align: center;
@@ -41,5 +61,3 @@ p {
     margin-top: 3rem;
   }
 }
-/* ` */
-/* export default Wrapper */

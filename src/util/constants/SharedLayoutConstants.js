@@ -1,10 +1,4 @@
-import {
-  FaFeather,
-  FaUserAstronaut,
-  FaDochub,
-  FaTelegram,
-  FaRegCheckCircle
-} from 'react-icons/fa';
+import { FaHome } from 'react-icons/fa';
 
 export const featureConstants = [
   {
@@ -43,28 +37,36 @@ export const featureConstants = [
 
 export const navLinks = [
   {
+    ref: 'overview',
+    // display: 'Back to Top',
+    icon: <FaHome />
+  },
+  {
     ref: 'features',
     display: 'Features'
     // icon: <FaFeather />
   },
   {
-    ref: '/about',
+    ref: 'about',
     display: 'About Us'
     // icon: <FaUserAstronaut />
   },
   {
-    ref: '/docs',
-    display: 'Documentation'
+    ref: 'docs',
+    display: 'Documentation',
+    link: true
     // icon: <FaDochub />
   },
   {
-    ref: '/contact',
-    display: 'Contact Us'
+    ref: 'contact',
+    display: 'Contact Us',
+    link: true
     // icon: <FaTelegram />
   },
   {
-    ref: '/register',
-    display: 'Sign Up'
+    ref: 'register',
+    display: 'Sign Up',
+    link: true
     // icon: <FaRegCheckCircle />
   }
 ];
@@ -103,3 +105,5 @@ export const FAQs = [
     body: 'Foo'
   }
 ];
+
+export const navBarHeight = -96;

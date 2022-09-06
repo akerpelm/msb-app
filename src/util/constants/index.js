@@ -2,6 +2,7 @@ import {
   featureConstants,
   navLinks,
   landingCarouselData,
-  FAQs
+  FAQs,
+  navBarHeight
 } from './SharedLayoutConstants';
-export { featureConstants, navLinks, landingCarouselData, FAQs };
+export { featureConstants, navLinks, landingCarouselData, FAQs, navBarHeight };

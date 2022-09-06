@@ -2,7 +2,7 @@ import '../../assets/css/Features.scss';
 import { AccordionUnit, FeatureCard } from '../../components';
 import { FAQs, featureConstants } from '../../util/constants';
 import { Accordion, Table } from 'react-bootstrap';
-
+import { Element } from 'react-scroll';
 const Features = () => {
   const featureList = featureConstants.map((feature, idx) => {
     return <FeatureCard key={idx} feature={feature} />;
