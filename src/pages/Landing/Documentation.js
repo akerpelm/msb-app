@@ -28,12 +28,7 @@ const Documentation = () => {
           <ListGroup.Item as="li">Porta ac consectetur ac</ListGroup.Item>
         </ListGroup> */}
       </div>
-      <div className="column2">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias
-        doloremque sed laborum alias voluptates qui sequi nobis, beatae aliquid.
-        Aliquam vel accusamus sunt blanditiis nesciunt dolores voluptate nisi
-        veniam minus?
-      </div>
+      <div className="column2">Docs</div>
     </div>
   );
 };

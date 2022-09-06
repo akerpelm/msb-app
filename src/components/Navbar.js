@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import * as RS from 'react-scroll';
 // import { useAppContext } from '../context/appContext';
 import '../assets/css/Navbar.scss';
 import { navLinks } from '../util/constants';
@@ -27,7 +28,7 @@ const Navbar = () => {
         <div className="link-container">
           {navLinks.map(({ ref, display, icon = <FaHome /> }, i) => {
             return (
-              <Link
+              <RS.Link
                 className={isActive === i ? 'btn active' : 'btn'}
                 to={ref}
                 key={i}
@@ -35,7 +36,7 @@ const Navbar = () => {
               >
                 {display}
                 {/* {icon} */}
-              </Link>
+              </RS.Link>
             );
           })}
         </div>

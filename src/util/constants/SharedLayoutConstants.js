@@ -43,7 +43,7 @@ export const featureConstants = [
 
 export const navLinks = [
   {
-    ref: '/features',
+    ref: 'features',
     display: 'Features'
     // icon: <FaFeather />
   },
