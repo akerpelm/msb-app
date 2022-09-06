@@ -3,18 +3,29 @@ import { Link } from 'react-router-dom';
 // import { useAppContext } from '../context/appContext';
 import '../assets/css/Navbar.scss';
 import { navLinks } from '../util/constants';
-// import { FaAlignLeft, FaUserCircle, FaCaretDown } from 'react-icons/fa';
+import {
+  FaAlignLeft,
+  FaUserCircle,
+  FaCaretDown,
+  FaFeather,
+  FaHome
+} from 'react-icons/fa';
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(null);
+  const [isActive, setIsActive] = useState(true);
 
   return (
     <nav>
       <div className="nav-center">
-        <Link to="/" className="btn">
+        <Link
+          to="/"
+          className={isActive === true ? 'btn active' : 'btn'}
+          onClick={() => setIsActive(true)}
+        >
+          <FaHome />
           Home
         </Link>
         <div className="link-container">
-          {navLinks.map(({ ref, display }, i) => {
+          {navLinks.map(({ ref, display, icon = <FaHome /> }, i) => {
             return (
               <Link
                 className={isActive === i ? 'btn active' : 'btn'}
@@ -23,6 +34,7 @@ const Navbar = () => {
                 onClick={() => setIsActive(i)}
               >
                 {display}
+                {/* {icon} */}
               </Link>
             );
           })}

@@ -1,3 +1,11 @@
+import {
+  FaFeather,
+  FaUserAstronaut,
+  FaDochub,
+  FaTelegram,
+  FaRegCheckCircle
+} from 'react-icons/fa';
+
 export const featureConstants = [
   {
     title: 'Question Creation',
@@ -37,22 +45,27 @@ export const navLinks = [
   {
     ref: '/features',
     display: 'Features'
+    // icon: <FaFeather />
   },
   {
     ref: '/about',
     display: 'About Us'
+    // icon: <FaUserAstronaut />
   },
   {
     ref: '/docs',
     display: 'Documentation'
+    // icon: <FaDochub />
   },
   {
     ref: '/contact',
     display: 'Contact Us'
+    // icon: <FaTelegram />
   },
   {
     ref: '/register',
     display: 'Sign Up'
+    // icon: <FaRegCheckCircle />
   }
 ];
 

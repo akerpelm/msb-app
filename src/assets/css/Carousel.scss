@@ -3,11 +3,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.3s ease-in-out all;
+  // transition: 3s ease-in-out all;
   padding: 100px;
   background-color: var(--grey-700);
   box-shadow: var(--shadow-1);
   margin-bottom: 20px;
+  min-width: 90vw;
+  max-width: 90vw;
   p {
     max-width: 100%;
   }

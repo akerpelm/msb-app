@@ -6,7 +6,7 @@ import { landingCarouselData } from '../../util/constants';
 
 const Landing = () => {
   return (
-    <div>
+    <div className="landing-title">
       <h2>Don't let outdated technology limit learning potential.</h2>
       <h1>
         My<span>Study</span>Book
