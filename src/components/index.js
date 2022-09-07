@@ -9,6 +9,7 @@ import Alert from './Alert';
 import FeatureCard from './FeatureCard';
 import AccordionUnit from './AccordionUnit';
 import ControlledCarousel from './ControlledCarousel';
+import Modal from './Modal';
 export {
   Logo,
   Navbar,
@@ -20,5 +21,6 @@ export {
   Alert,
   FeatureCard,
   AccordionUnit,
-  ControlledCarousel
+  ControlledCarousel,
+  Modal
 };

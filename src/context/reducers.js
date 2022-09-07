@@ -1,4 +1,4 @@
-import { DISPLAY_ALERT, CLEAR_ALERT } from './actions';
+import { DISPLAY_ALERT, CLEAR_ALERT, TOGGLE_MODAL } from './actions';
 import { initialState } from './appContext';
 
 const reducer = (state, action) => {
@@ -13,6 +13,13 @@ const reducer = (state, action) => {
     }
     case CLEAR_ALERT: {
       return { ...state, showAlert: false, alertType: '', alertText: '' };
+    }
+
+    case TOGGLE_MODAL: {
+      return {
+        ...initialState,
+        showModal: !state.showModal
+      };
     }
   }
 };

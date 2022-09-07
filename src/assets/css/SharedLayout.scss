@@ -3,4 +3,10 @@
   align-items: center;
   justify-content: center;
   background-color: var(--grey-100);
+  max-width: 100vw;
+  // max-width: var(--fluid-width);
+}
+
+.dashboard {
+  // max-width: var(--fluid-width);
 }

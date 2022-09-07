@@ -1,7 +1,7 @@
 import React, { useReducer, useContext } from 'react';
 // import axios from 'axios';
 import reducer from './reducers';
-import { DISPLAY_ALERT, CLEAR_ALERT } from './actions';
+import { DISPLAY_ALERT, CLEAR_ALERT, TOGGLE_MODAL } from './actions';
 
 // // const token = localStorage.getItem('token');
 // // const user = localStorage.getItem('user');
@@ -11,7 +11,8 @@ const initialState = {
   isLoading: false,
   showAlert: false,
   alertText: '',
-  alertType: ''
+  alertType: '',
+  showModal: false
 };
 //   // showAlert: false,
 //   // alertText: '',
@@ -56,8 +57,18 @@ const AppProvider = ({ children }) => {
     // }, 5000);
   };
 
+  const toggleModal = () => {
+    dispatch({ type: TOGGLE_MODAL });
+  };
   return (
-    <AppContext.Provider value={{ ...state, displayAlert, clearAlert }}>
+    <AppContext.Provider
+      value={{
+        ...state,
+        displayAlert,
+        clearAlert,
+        toggleModal
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

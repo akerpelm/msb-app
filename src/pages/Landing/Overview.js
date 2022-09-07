@@ -1,16 +1,13 @@
 import landing1 from '../../assets/images/landing1.svg';
 import '../../assets/css/LandingPage.scss';
-import { ControlledCarousel } from '../../components';
-import { Link } from 'react-router-dom';
+import { ControlledCarousel, Modal } from '../../components';
 import * as RS from 'react-scroll';
 import { landingCarouselData } from '../../util/constants';
-import { About, Contact, Documentation, Features, Register } from '..';
-import Scroll from 'react-scroll';
 import { navBarHeight } from '../../util/constants/SharedLayoutConstants';
-const ScrollLink = Scroll.ScrollLink;
-const scroller = Scroll.scroller;
-
+import { useAppContext } from '../../context/appContext';
 const Overview = () => {
+  const { showModal, toggleModal } = useAppContext();
+
   return (
     <div className="overview">
       <div className="overview-title">
@@ -45,9 +42,13 @@ const Overview = () => {
               >
                 Learn More
               </RS.Link>
-              <Link to="/register" className="btn btn-hero">
+              <button
+                // to="register"
+                className="btn btn-hero"
+                onClick={toggleModal}
+              >
                 Register Today
-              </Link>
+              </button>
             </div>
           </div>
           <img src={landing1} alt="overview-img-1" className="img main-img" />

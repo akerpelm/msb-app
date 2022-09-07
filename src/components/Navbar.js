@@ -1,4 +1,4 @@
-import { Link as RSLink } from 'react-scroll';
+import { Link } from 'react-scroll';
 import '../assets/css/Navbar.scss';
 import { navBarHeight, navLinks } from '../util/constants';
 
@@ -9,17 +9,10 @@ const Navbar = () => {
         <div className="link-container">
           {navLinks.map(({ ref, display, icon, link = false }, i) => {
             return (
-              <RSLink
-                className="btn"
-                to={ref}
-                key={i}
-                offset={navBarHeight}
-                spy
-                smooth
-              >
+              <Link className="btn" to={ref} key={i} offset={navBarHeight} spy>
                 {display}
                 {icon}
-              </RSLink>
+              </Link>
             );
           })}
         </div>
