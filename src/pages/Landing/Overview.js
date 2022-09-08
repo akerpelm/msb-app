@@ -1,4 +1,4 @@
-import landing1 from '../../assets/images/landing1.svg';
+import landing from '../../assets/images/landing.svg';
 import '../../assets/css/LandingPage.scss';
 import { ControlledCarousel, Modal } from '../../components';
 import * as RS from 'react-scroll';
@@ -51,7 +51,7 @@ const Overview = () => {
               </button>
             </div>
           </div>
-          <img src={landing1} alt="overview-img-1" className="img main-img" />
+          <img src={landing} alt="overview-img-1" className="img main-img" />
         </div>
         <ControlledCarousel data={landingCarouselData} />
       </div>
